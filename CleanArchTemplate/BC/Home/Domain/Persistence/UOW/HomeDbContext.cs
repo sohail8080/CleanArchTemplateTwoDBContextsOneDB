@@ -17,6 +17,15 @@ namespace CleanArchTemplate.BC.Home.Domain.Persistence.UOW
     // Two DB Context ==> Two Migration Folder ==> Two DContextConfig.cs files
 
     // This Class will extend form DBContext only
+
+    // Two DBContext Means we have 2 light weight UOW classes
+    // we virtually divide the EF Repos and Custom Repo in two virtual groupts
+    // two light weight UOWs are better than one heavy wieght UOW
+    // we should always keep in mind what UOW has what DBSets/EF Repos
+    // Domain Model also divided in two halves with respect to Persistence
+    // One set of Dom Objecs persisted by one UOW
+    // Another by other UOW. so remember this
+
     public class HomeDbContext : DbContext
     {
         public DbSet<Genre> Genres { get; set; }
