@@ -5,8 +5,8 @@ using Microsoft.Owin;
 using Microsoft.Owin.Security.Cookies;
 using Microsoft.Owin.Security.Google;
 using Owin;
-using CleanArchTemplate.Common.UOW;
 using CleanArchTemplate.BC.AccessControl.Account.Domain.Models;
+using CleanArchTemplate.BC.AccessControl.UOW;
 
 namespace CleanArchTemplate
 {

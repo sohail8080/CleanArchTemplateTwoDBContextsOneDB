@@ -168,8 +168,12 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="App_Start\ApplicationSignInManager.cs" />
+    <Compile Include="App_Start\ApplicationUserManager.cs" />
+    <Compile Include="App_Start\EmailService.cs" />
     <Compile Include="App_Start\ExtendedRazorViewEngine.cs" />
     <Compile Include="App_Start\CustomViewEngine .cs" />
+    <Compile Include="App_Start\SmsService.cs" />
     <Compile Include="BC\AccessControl\Account\AccountAreaRegistration.cs" />
     <Compile Include="BC\AccessControl\Manage\ManageAreaRegistration.cs" />
     <Compile Include="BC\AccessControl\Account\Domain\Models\ApplicationUser.cs" />
@@ -192,17 +196,27 @@
     <Compile Include="BC\AccessControl\Manage\Presentation\ViewModels\FactorViewModel.cs" />
     <Compile Include="BC\AccessControl\Manage\Presentation\ViewModels\ManageLoginsViewModel.cs" />
     <Compile Include="BC\AccessControl\Manage\Presentation\ViewModels\IndexViewModel.cs" />
+    <Compile Include="BC\AccessControl\UOW\Migrations\201909161739304_ApplicationDbInitialModel.cs" />
+    <Compile Include="BC\AccessControl\UOW\Migrations\201909161739304_ApplicationDbInitialModel.Designer.cs">
+      <DependentUpon>201909161739304_ApplicationDbInitialModel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BC\AccessControl\UOW\Migrations\ApplicationDbContextConfiguration.cs" />
+    <Compile Include="BC\Home\Domain\Models\Genre.cs" />
     <Compile Include="BC\Home\Domain\Persistence\UOW\HomeDbContext.cs" />
+    <Compile Include="BC\Home\Domain\Persistence\UOW\Migrations\201909161741517_HomeDbContextConfigurationInitialModel.cs" />
+    <Compile Include="BC\Home\Domain\Persistence\UOW\Migrations\201909161741517_HomeDbContextConfigurationInitialModel.Designer.cs">
+      <DependentUpon>201909161741517_HomeDbContextConfigurationInitialModel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BC\Home\Domain\Persistence\UOW\Migrations\HomeDbContextConfiguration.cs" />
     <Compile Include="BC\Home\HomeAreaRegistration.cs" />
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
-    <Compile Include="App_Start\IdentityConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="BC\AccessControl\Account\Presentation\Controllers\AccountController.cs" />
     <Compile Include="BC\Home\Presentation\Controllers\HomeController.cs" />
     <Compile Include="BC\AccessControl\Manage\Presentation\Controllers\ManageController.cs" />
-    <Compile Include="Common\UOW\ApplicationDbContext.cs" />
+    <Compile Include="BC\AccessControl\UOW\ApplicationDbContext.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -312,10 +326,8 @@
     <Folder Include="Common\BaseClasses\Presentation\" />
     <Folder Include="Common\Exceptions\" />
     <Folder Include="Common\Helpers\" />
-    <Folder Include="Common\Migrations\" />
     <Folder Include="Common\Utilities\" />
     <Folder Include="Common\Views\Default\" />
-    <Folder Include="Models\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
@@ -329,6 +341,14 @@
     <None Include="packages.config" />
     <Content Include="Scripts\jquery-3.3.1.slim.min.map" />
     <Content Include="Scripts\jquery-3.3.1.min.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="BC\AccessControl\UOW\Migrations\201909161739304_ApplicationDbInitialModel.resx">
+      <DependentUpon>201909161739304_ApplicationDbInitialModel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BC\Home\Domain\Persistence\UOW\Migrations\201909161741517_HomeDbContextConfigurationInitialModel.resx">
+      <DependentUpon>201909161741517_HomeDbContextConfigurationInitialModel.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
